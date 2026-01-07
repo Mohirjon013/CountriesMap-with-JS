@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countries</title>
+    <title>Countries Map</title>
+    <link rel="icon" href="./images/world-icon.svg">
     <link rel="stylesheet" href="./css/main.css">
     <style type="text/tailwindcss">
         @theme {
@@ -17,16 +18,16 @@
             <div class="header flex items-centeri justify-between py-5">
                 <div class="header__title-wrapper flex items-center gap-[14px]">
                     <img src="./images/world-icon.svg" alt="world-icon" width="55" height="55">
-                    <h1 class=" px-8 py-3 bg-white font-semibold text-2xl rounded-full shadow-md ">Country</h1>
+                    <a class=" px-8 py-3 bg-white text-sky-700 font-semibold text-2xl rounded-full shadow-md hover:shadow-lg hover:scale-105 duration-300" href="/">Country</a>
                 </div>
                 <div class="flex items-center gap-[10px]">
-                    <button class="w-[55px] h-[55px] rounded-[50%] border border-slate-300 flex items-center justify-around cursor-pointer">
+                    <button onclick="handleLikeCountBtn()" class="w-[55px] h-[55px] rounded-[50%] border border-slate-300 flex items-center justify-around cursor-pointer">
                         <img class="hover:scale-125 duration-300" src="./images/like-icon.svg" alt="like-icon" width="25" height="25">
-                        <span class="font-semibold text-[13px]">(0)</span>
+                        <span class="like-count font-semibold text-[13px]">(0)</span>
                     </button>
-                    <button class="w-[50px] h-[50px] rounded-[50%] border border-slate-300 flex items-center justify-around cursor-pointer">
+                    <button onclick="handleSavedCountBtn()" class="w-[50px] h-[50px] rounded-[50%] border border-slate-300 flex items-center justify-around cursor-pointer">
                         <img class="hover:scale-125 duration-300" src="./images/saved-icon.svg" alt="saved-icon" width="25" height="25">
-                        <span class="font-semibold text-[13px]">(0)</span>
+                        <span class="saved-count font-semibold text-[13px]">(0)</span>
                     </button>
                     <button class="w-[50px] h-[50px] rounded-[50%] border border-slate-300 flex items-center justify-around cursor-pointer">
                         <img class="hover:scale-125 duration-300" src="./images/dark-icon.svg" alt="dark-icon" width="25" height="25">
@@ -37,14 +38,12 @@
         </div>
     </header>
 
-    <!-- <img src="" alt=""> -->
-    
     <main class="site-main">
         <section class="hero-section">
             <div class="container">
                 <div class=" p-3 flex items-center justify-between mb-[50px]">
                     <input class="input-search w-[330px] rounded-[10px] border-[2px] border-slate-400 outline-slate-500 p-2 px-3" type="search" name="user_search" placeholder="Search countries" autocomplete="off">
-                    <select class="w-[230px] rounded-[10px] border-[2px] border-slate-400 outline-slate-500 p-2 px-3" name="All" id="">
+                    <select class="select-change  w-[230px] rounded-[10px] border-[2px] border-slate-400 outline-slate-500 p-2 px-3" name="All" id="">
                         <option value="All">All</option>
                     </select>
                 </div>
@@ -56,6 +55,15 @@
             </div>
         </section>
     </main>
+
+    <div id="wrapper" class="modal-wrapper fixed right-0 left-0 top-0 bottom-0 backdrop-blur duration-300 scale-0">
+        <div class="modal-inner w-[600px] h-[450px] absolute bg-slate-500 inset-0 m-auto rounded-lg shadow-lg">
+            <button onclick="handleCloseBtn()" class="close-btn absolute right-[5px] top-[5px] cursor-pointer">
+                <img src="./images/close-icon.svg" alt="close-icon" width="55" height="55">
+            </button>
+            <div class="modal-content"></div>
+        </div>
+    </div>
     
     <script src="./js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
