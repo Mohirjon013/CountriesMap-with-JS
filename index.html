@@ -12,17 +12,26 @@
     </style>
 </head>
 <body>
-    <header class="shadow-lg ">
+    <header class="shadow-lg mb-[73px]">
         <div class="container">
             <div class="header flex items-centeri justify-between py-5">
                 <div class="header__title-wrapper flex items-center gap-[14px]">
-                    <img src="./images/world-icon.svg" alt="world-icon" width="60" height="60">
-                    <h1 class=" px-8 py-3 bg-white font-semibold text-2xl rounded-full shadow-md hover:shadow-lg transition-shadow duration-200">Country</h1>
+                    <img src="./images/world-icon.svg" alt="world-icon" width="55" height="55">
+                    <h1 class=" px-8 py-3 bg-white font-semibold text-2xl rounded-full shadow-md ">Country</h1>
                 </div>
-                <div class="">
-                    <button class="w-[50px] h-[50px] rounded-[50%] border border-black">Like</button>
-                    <button class="w-[50px] h-[50px] rounded-[50%] border border-black">Save</button>
-                    <button class="w-[50px] h-[50px] rounded-[50%] border border-black">Mode</button>
+                <div class="flex items-center gap-[10px]">
+                    <button class="w-[55px] h-[55px] rounded-[50%] border border-slate-300 flex items-center justify-around cursor-pointer">
+                        <img class="hover:scale-125 duration-300" src="./images/like-icon.svg" alt="like-icon" width="25" height="25">
+                        <span class="font-semibold text-[13px]">(0)</span>
+                    </button>
+                    <button class="w-[50px] h-[50px] rounded-[50%] border border-slate-300 flex items-center justify-around cursor-pointer">
+                        <img class="hover:scale-125 duration-300" src="./images/saved-icon.svg" alt="saved-icon" width="25" height="25">
+                        <span class="font-semibold text-[13px]">(0)</span>
+                    </button>
+                    <button class="w-[50px] h-[50px] rounded-[50%] border border-slate-300 flex items-center justify-around cursor-pointer">
+                        <img class="hover:scale-125 duration-300" src="./images/dark-icon.svg" alt="dark-icon" width="25" height="25">
+                        <span class="font-semibold text-[13px]">(0)</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -33,13 +42,16 @@
     <main class="site-main">
         <section class="hero-section">
             <div class="container">
-                <div class="">
-                    <input type="text">
-                    <select name="" id=""></select>
+                <div class=" p-3 flex items-center justify-between mb-[50px]">
+                    <input class="input-search w-[330px] rounded-[10px] border-[2px] border-slate-400 outline-slate-500 p-2 px-3" type="search" name="user_search" placeholder="Search countries" autocomplete="off">
+                    <select class="w-[230px] rounded-[10px] border-[2px] border-slate-400 outline-slate-500 p-2 px-3" name="All" id="">
+                        <option value="All">All</option>
+                    </select>
                 </div>
                 
-                <ul class="hero__list flex ">
+                <ul class="hero__list">
                     <!--  -->
+                    
                 </ul>
             </div>
         </section>
