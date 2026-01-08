@@ -174,7 +174,6 @@ function handleCloseBtn(){
     elModalWrapper.classList.add("scale-0")
     document.body.classList.remove("overflow-y-hidden")
 }
-
 // modal start
 
 
@@ -236,3 +235,25 @@ elSelectChange.addEventListener("change", (evnt) => {
     }
 })
 // select-change end
+
+
+let moon = document.querySelector("#moon")
+let sun = document.querySelector("#sun")
+let body = document.querySelector("body")
+
+
+function toggleDarkMode(){
+    body.classList.toggle("dark")
+
+    if(body.classList.contains("dark")){
+        moon.style.display = "none"
+        sun.style.display = "block"
+    }
+    else{
+        moon.style.display = "block"
+        sun.style.display = "none"
+    }
+}
+moon.addEventListener("click", toggleDarkMode)
+sun.addEventListener("click", toggleDarkMode)
+

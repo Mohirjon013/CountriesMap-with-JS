@@ -10,10 +10,11 @@
         @theme {
             --color-clifford: #da373d;
         }
+        
     </style>
 </head>
-<body>
-    <header class="shadow-lg mb-[73px]">
+<body class="bg-(--dark-bg)">
+    <header class="shadow-lg mb-[73px] bg-(--dark-header)">
         <div class="container">
             <div class="header flex items-centeri justify-between py-5">
                 <div class="header__title-wrapper flex items-center gap-[14px]">
@@ -21,51 +22,53 @@
                     <a class=" px-8 py-3 bg-white text-sky-700 font-semibold text-2xl rounded-full shadow-md hover:shadow-lg hover:scale-105 duration-300" href="/">Country</a>
                 </div>
                 <div class="flex items-center gap-[10px]">
-                    <button onclick="handleLikeCountBtn()" class="w-[55px] h-[55px] rounded-[50%] border border-slate-300 flex items-center justify-around cursor-pointer">
+                    <button onclick="handleLikeCountBtn()" class="w-[55px] h-[55px] rounded-[50%] border border-slate-300 flex items-center justify-around cursor-pointer bg-(--dark-icons) ">
                         <img class="hover:scale-125 duration-300" src="./images/like-icon.svg" alt="like-icon" width="25" height="25">
                         <span class="like-count font-semibold text-[13px]">(0)</span>
                     </button>
-                    <button onclick="handleSavedCountBtn()" class="w-[50px] h-[50px] rounded-[50%] border border-slate-300 flex items-center justify-around cursor-pointer">
+                    <button onclick="handleSavedCountBtn()" class="w-[50px] h-[50px] rounded-[50%] border border-slate-300 flex items-center justify-around cursor-pointer bg-(--dark-icons) ">
                         <img class="hover:scale-125 duration-300" src="./images/saved-icon.svg" alt="saved-icon" width="25" height="25">
                         <span class="saved-count font-semibold text-[13px]">(0)</span>
                     </button>
-                    <button class="w-[50px] h-[50px] rounded-[50%] border border-slate-300 flex items-center justify-around cursor-pointer">
-                        <img class="hover:scale-125 duration-300" src="./images/dark-icon.svg" alt="dark-icon" width="25" height="25">
-                        <span class="font-semibold text-[13px]">(0)</span>
+                    <button class="w-[50px] h-[50px] rounded-[50%] border border-slate-300 flex items-center justify-around cursor-pointer bg-(--dark-icons) ">
+                        <img id="moon" class="hover:scale-125 duration-300" src="./images/dark-icon.svg" alt="dark-icon" width="25" height="25">
+                        <img id="sun" class="hover:scale-125 duration-300 hidden" src="./images/sun-icon.svg" alt="sun-icon" width="25" height="25">
                     </button>
                 </div>
             </div>
         </div>
     </header>
-
+    
     <main class="site-main">
-        <section class="hero-section">
+        <section class="hero-section mb-[30px]">
             <div class="container">
                 <div class=" p-3 flex items-center justify-between mb-[50px]">
-                    <input class="input-search w-[330px] rounded-[10px] border-[2px] border-slate-400 outline-slate-500 p-2 px-3" type="search" name="user_search" placeholder="Search countries" autocomplete="off">
-                    <select class="select-change  w-[230px] rounded-[10px] border-[2px] border-slate-400 outline-slate-500 p-2 px-3" name="All" id="">
+                    <input class="input-search w-[330px] rounded-[10px] border-[2px] border-slate-400 outline-slate-500 p-2 px-3 bg-(--dark-input) text-(--dark-input--text) placeholder:text-(--dark-input--text)" type="search" name="user_search" placeholder="Search countries" autocomplete="off">
+                    <select class="select-change cursor-pointer w-[230px] rounded-[10px] border-[2px] border-slate-400 outline-slate-500 p-2 px-3 bg-(--dark-input) text-(--dark-input--text)" name="All" id="">
                         <option value="All">All</option>
                     </select>
                 </div>
                 
-                <ul class="hero__list">
-                    <!--  -->
-                    
-                </ul>
+                <ul class="hero__list"></ul>
             </div>
         </section>
     </main>
-
+    
     <div id="wrapper" class="modal-wrapper fixed right-0 left-0 top-0 bottom-0 backdrop-blur duration-300 scale-0">
         <div class="modal-inner w-[600px] h-[450px] absolute bg-slate-500 inset-0 m-auto rounded-lg shadow-lg">
-            <button onclick="handleCloseBtn()" class="close-btn absolute right-[5px] top-[5px] cursor-pointer">
+            <button onclick="handleCloseBtn()" class="close-btn absolute right-[5px] top-[5px] hover:scale-125 duration-300 cursor-pointer">
                 <img src="./images/close-icon.svg" alt="close-icon" width="55" height="55">
             </button>
             <div class="modal-content"></div>
         </div>
     </div>
     
-    <script src="./js/main.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

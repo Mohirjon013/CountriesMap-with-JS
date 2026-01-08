@@ -8,3 +8,12 @@
     margin: 0 auto;
     padding: 0 20px;
 }
+
+
+.dark{
+    --dark-bg: #293551;
+    --dark-header:#354f74;
+    --dark-icons:white;
+    --dark-input:#9CA3AF;
+    --dark-input--text:#ffffff;
+}
