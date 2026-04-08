@@ -1,5 +1,6 @@
 let elHeroList = document.querySelector(".hero__list")
-elHeroList.className = "flex flex-wrap gap-y-[40px] justify-between"
+elHeroList.className = "flex flex-wrap gap-y-[40px] sm:justify-between justify-around"
+
 let elInputSearch = document.querySelector(".input-search")
 let elSelectChange = document.querySelector(".select-change")
 
@@ -110,7 +111,7 @@ function renderCountry(arr){
     elHeroList.innerHTML = null
     arr.forEach(item => {
         let elHeroItem = document.createElement("li")
-        elHeroItem.className = "w-[330px] p-5 bg-slate-200  border border-slate-500 rounded-[10px]"
+        elHeroItem.className = "sm:w-[330px] w-[330px] p-5 bg-slate-200  border border-slate-500 rounded-[10px]"
         elHeroItem.innerHTML = `
             <img class="object-cover w-full h-[200px] rounded-[10px]" src=${item.flag} alt="flags" width="200" height="200">
             <h2 class="font-bold text-[20px] text-zinc-600 mt-[15px]">Country: ${item.name}</h2>
@@ -142,9 +143,7 @@ renderCountry(countries)
 function handleMoreClick(id){
     elModalWrapper.classList.remove("scale-0")
     document.body.classList.add("overflow-y-hidden")
-    // elModalWrapper.classList.add("overscroll-behavior:none")
     const findedObj = countries.find(item => item.id == id)
-    console.log(findedObj);
     
     elModalContent.innerHTML = `
         <div class="w-[300px] mx-auto mt-[60px] p-2 bg-slate-300 border-[2px] border-slate-800 rounded-[10px]">
